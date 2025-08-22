@@ -33,3 +33,5 @@ build/
 .vscode/
 .vscode/
 .idea/
+.env
+.env.prod
