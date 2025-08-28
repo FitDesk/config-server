@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/FitDesk/server-secrets.git"
+          default-label: main # La rama
+          timeout: 5
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}
+#          clone-on-start: true
+#          force-pull: true
+encrypt:
+  key: ${ENCRYPT_KEY}
