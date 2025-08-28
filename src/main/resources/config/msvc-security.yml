@@ -1,7 +1,11 @@
 spring:
   application:
     name: msvc-security
-
+  datasource:
+    url: jdbc:postgresql://db-fitdesk:5432/security_db
+    username: security_user
+    password: admin
+    driver-class-name: org.postgresql.Driver
 server:
   port: ${MSVC_SECURITY_PORT:9091}
 

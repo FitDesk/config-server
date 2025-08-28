@@ -1,7 +1,11 @@
 spring:
   application:
     name: msvc-billing
-
+  datasource:
+    url: jdbc:postgresql://db-fitdesk:5432/billing_db
+    username: billing_user
+    password: admin
+    driver-class-name: org.postgresql.Driver
 server:
   port: ${MSVC_BILLING_PORT:9093}
 
