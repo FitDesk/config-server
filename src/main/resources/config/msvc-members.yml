@@ -1,31 +1,25 @@
 spring:
   application:
     name: msvc-members
-  datasource:
-    url: jdbc:postgresql://db-fitdesk:5432/members_db
-    username: members_user
-    password: admin
-    driver-class-name: org.postgresql.Driver
+  # datasource:
+  #   url: jdbc:postgresql://db-fitdesk:5432/members_db
+  #   username: members_user
+  #   password: admin
+  #   driver-class-name: org.postgresql.Driver
 server:
   port: ${MSVC_MEMBERS_PORT:9092}
 
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /
-    url: /v3/api-docs
-    enabled: true
-  show-actuator: true
-  use-management-port: true
-logging:
-  level:
-    org.springframework.security: TRACE
-    org.springframework.web: DEBUG
-    org.springframework.boot.autoconfigure.security: DEBUG
-    org.springframework.web.cloud.openfeign: DEBUG
-    org.springframework.web.client.RestTemplate: DEBUG
+# springdoc:
+#   api-docs:
+#     path: /v3/api-docs
+#   swagger-ui:
+#     path: /
+#     url: /v3/api-docs
+#     enabled: true
+#   show-actuator: true
+#   use-management-port: true
+
 
 eureka:
   client:
