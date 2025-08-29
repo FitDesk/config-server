@@ -15,10 +15,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-
-#      - name: Build with Maven
-#        run: mvn -B -DskipTests package
-
       - name: Build & Run Sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
