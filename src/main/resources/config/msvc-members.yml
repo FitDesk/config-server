@@ -10,16 +10,6 @@ server:
   port: ${MSVC_MEMBERS_PORT:9092}
 
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /
-    url: /v3/api-docs
-    enabled: true
-  show-actuator: true
-  use-management-port: true
-
 eureka:
   client:
     service-url:

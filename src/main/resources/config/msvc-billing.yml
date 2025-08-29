@@ -10,15 +10,6 @@ server:
   port: ${MSVC_BILLING_PORT:9093}
 
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /
-    url: /v3/api-docs
-    enabled: true
-  show-actuator: true
-  use-management-port: true
 
 eureka:
   client:
