@@ -1,11 +1,11 @@
 spring:
   application:
     name: msvc-classes
-  # datasource:
-  #   url: jdbc:postgresql://db-fitdesk:5432/classes_db
-  #   username: classes_user
-  #   password: admin
-  #   driver-class-name: org.postgresql.Driver
+  datasource:
+    url: jdbc:postgresql://db-fitdesk:5432/classes_db
+    username: classes_user
+    password: admin
+    driver-class-name: org.postgresql.Driver
 server:
   port: ${MSVC_CLASSES_PORT:9094}
 

@@ -1,11 +1,11 @@
 spring:
   application:
     name: msvc-members
-  # datasource:
-  #   url: jdbc:postgresql://db-fitdesk:5432/members_db
-  #   username: members_user
-  #   password: admin
-  #   driver-class-name: org.postgresql.Driver
+  datasource:
+    url: jdbc:postgresql://db-fitdesk:5432/members_db
+    username: members_user
+    password: admin
+    driver-class-name: org.postgresql.Driver
 server:
   port: ${MSVC_MEMBERS_PORT:9092}
 
