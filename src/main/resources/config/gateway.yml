@@ -12,6 +12,10 @@ spring:
     gateway:
       server:
         webflux:
+          discovery:
+            locator:
+              enabled: false
+              # lower-case-service-id: true
           globalcors:
             cors-configurations:
               '[/**]':
@@ -24,10 +28,7 @@ spring:
                   - DELETE
                   - PATCH
                   - POST
-          discovery:
-            locator:
-              enabled: true
-              lower-case-service-id: true
+
 #    config:
 #      enabled: true
 #  security:
@@ -37,19 +38,25 @@ spring:
 #          jwk-set-uri:
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.uuid}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://eureka-server:8761/eureka}
     fetch-registry: true
     register-with-eureka: true
 
-
-
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.loadbalancer: TRACE
+    org.springframework.cloud.netflix.eureka: DEBUG
 
 management:
   endpoints:
     web:
       exposure:
         include: health , gateway , info
-  server:
-    port: 9090
+server:
+  port: 9090
