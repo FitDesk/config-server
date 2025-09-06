@@ -1,10 +1,10 @@
 spring:
   application:
     name: msvc-chat
-  # data:
-  #   mongodb:
-  #     uri: mongodb://admin:admin@mongo-db:27017/chats
-  #     database: chats
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@mongo-db:27017/chats
+      database: chats
 server:
   port: ${MSVC_CHAT_PORT:9096}
 
