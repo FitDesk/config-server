@@ -28,14 +28,13 @@ spring:
                   - DELETE
                   - PATCH
                   - POST
-
 #    config:
 #      enabled: true
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          jwk-set-uri:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://msvc-security:9091/.well-known/jwks.json
 
 
 resilience4j:
