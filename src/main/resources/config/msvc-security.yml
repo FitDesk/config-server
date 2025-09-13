@@ -39,7 +39,18 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
-    
+
+auth:
+  client:
+    redirect-uris:
+      - http://gateway:9090/login/oauth2/code/gateway-client 
+      - http://gateway:9090/authorized                      
+    post-logout-redirect-uri: http://gateway:9090/logout    
+  server:
+    issuer: http://msvc-security:9091
+
+
+
 management:
   endpoints:
     web:
@@ -59,3 +70,5 @@ logging:
     org.springframework.boot.autoconfigure.security: DEBUG
     org.springframework.web.cloud.openfeign: DEBUG
     org.springframework.web.client.RestTemplate: DEBUG
+    
+    

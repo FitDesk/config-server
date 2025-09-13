@@ -22,12 +22,10 @@ spring:
                 allowedOrigins:
                   - "http://localhost:5173"
                   - "https://fit-desk.netlify.app"
-                allowedMethods:
-                  - GET
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - POST
+                allowedMethods: "*"
+                allowedHeaders: "*"
+                allowCredentials: true
+                maxAge: 3600
 #    config:
 #      enabled: true
   security:
@@ -67,6 +65,9 @@ logging:
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.loadbalancer: TRACE
     org.springframework.cloud.netflix.eureka: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.web: DEBUG
+    com.gateway.security: DEBUG
 
 management:
   endpoints:
