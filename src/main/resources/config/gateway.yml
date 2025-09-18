@@ -35,19 +35,19 @@ spring:
           jwk-set-uri: http://msvc-security:9091/.well-known/jwks.json
 
 
-resilience4j:
-  circuitbreaker:
-    configs:
-      default:
-        slidingWindowSize: 10
-        minimumNumberOfCalls: 5
-        permittedNumberOfCallsInHalfOpenState: 3
-        waitDurationInOpenState: 5s
-        failureRateThreshold: 50
-        eventConsumerBufferSize: 10
-    instances:
-      billingCircuitBreaker:
-        baseConfig: default
+# resilience4j:
+#   circuitbreaker:
+#     configs:
+#       default:
+#         slidingWindowSize: 50
+#         minimumNumberOfCalls: 20
+#         permittedNumberOfCallsInHalfOpenState: 5
+#         waitDurationInOpenState: 10s
+#         failureRateThreshold: 70
+#         eventConsumerBufferSize: 10
+#     instances:
+#       billingCircuitBreaker:
+#         baseConfig: default
 
 
 eureka:
@@ -73,6 +73,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: health , gateway , info
+        include: health,info,env,gateway,metrics,loggers
+  # endpoint:
+  #   gateway:
+  #     enabled: true
+
+  
 server:
   port: 9090
