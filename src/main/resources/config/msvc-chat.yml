@@ -3,17 +3,24 @@ spring:
     name: msvc-chat
   data:
     mongodb:
-      uri: mongodb://admin:admin@mongo-db:27017/chats
+      uri: mongodb://admin:admin@mongo-db:27017/chats?replicaSet=rs0&authSource=admin
       database: chats
+
+  # security:
+  #   oauth2:
+  #     resourceserver:
+  #       jwt:
+  #         jwk-set-uri: http://msvc-security:9091/.well-known/jwks.json
+
 server:
   port: ${MSVC_CHAT_PORT:9096}
 
 
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.uuid}
+  # instance:
+  #   prefer-ip-address: true
+  #   instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.uuid}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://eureka-server:8761/eureka}
