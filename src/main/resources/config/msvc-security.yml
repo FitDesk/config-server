@@ -6,12 +6,6 @@ app:
 spring:
   application:
     name: msvc-security
-  devtools:
-    restart:
-      enabled: true
-      poll-interval: 1000
-      quiet-period: 500
-      # additional-paths: src/main/java
   datasource:
     url: jdbc:postgresql://db-fitdesk:5432/security_db
     username: postgres
