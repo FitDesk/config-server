@@ -12,7 +12,12 @@ spring:
 server:
   port: ${CONFIG_SERVER_PORT:7777}
 
-
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /
+    url: /v3/api-docs
 
 management:
   endpoints:
