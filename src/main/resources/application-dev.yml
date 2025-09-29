@@ -5,5 +5,6 @@ spring:
         git:
           uri: "https://github.com/FitDesk/server-secrets.git"
           default-label: dev
+          clone-on-start: true
           username: ${GIT_USERNAME}
           password: ${GIT_TOKEN}
