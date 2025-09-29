@@ -1,18 +1,9 @@
 spring:
   cloud:
-    discovery:
-      enabled: false
     config:
       server:
-        native:
-          search-locations: classpath:/config
-  # kafka:
-  #   bootstrap-servers: kafka:29092
-  #   consumer:
-  #     group-id: fitdesk-group
-  #     auto-offset-reset: earliest
-  #     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  #     value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  #   producer:
-  #     key-serializer: org.apache.kafka.common.serialization.StringSerializer
-  #     value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        git:
+          uri: "https://github.com/FitDesk/server-secrets.git"
+          default-label: dev
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}

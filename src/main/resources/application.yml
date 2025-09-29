@@ -5,10 +5,10 @@ spring:
     discovery:
       enabled: false
 
-    config:
-      server:
-        native:
-          search-locations: classpath:/config
+    # config:
+    #   server:
+    #     native:
+    #       search-locations: classpath:/config
 server:
   port: ${CONFIG_SERVER_PORT:7777}
 
